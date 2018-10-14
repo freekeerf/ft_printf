@@ -33,7 +33,6 @@ $(NAME):
 	@mv $(OBJ) $(OBJDIR)
 	@mv libft/*.o $(OBJDIR)
 	@cp libft/libft.h obj
-#	ar rc $(NAME) $(addprefix $(OBJDIR)/,$(OBJ))
 	ar rc $(NAME) obj/*.o
 
 clean:
