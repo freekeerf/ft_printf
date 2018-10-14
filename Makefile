@@ -14,7 +14,7 @@ NAME = libftprintf.a
 HEADER = includes/ft_printf.h
 OPTION = -c -I $(HEADER)
 FLAG = -Wall -Wextra -Werror
-#SRCDIR = srcs
+SRCDIR = srcs
 SRC = ft_printf.c args_handling.c apply_flags.c apply_id.c apply_s.c ft_itoa_ll.c apply_c.c \
 	apply_o.c apply_u.c apply_x.c apply_p.c ft_itoa_cc.c ft_uitoa_cc.c size_mod.c \
 	ft_uitoa_ll.c
@@ -25,7 +25,7 @@ LIB = libft/libft.a
 
 all: $(NAME)
 
-$(NAME): 
+$(NAME):
 	make -C libft
 	gcc $(FLAG) $(OPTION) $(addprefix $(SRCDIR)/,$(SRC))
 	ar rc $(NAME) $(OBJ)
