@@ -20,7 +20,7 @@ SRC = ft_printf.c args_handling.c apply_flags.c apply_id.c apply_s.c ft_itoa_ll.
 	ft_uitoa_ll.c unicode.c
 OBJ = ft_printf.o args_handling.o apply_flags.o apply_id.o apply_s.o ft_itoa_ll.o apply_c.o \
 	apply_o.o apply_u.o apply_x.o apply_p.o ft_itoa_cc.o ft_uitoa_cc.o size_mod.o \
-	ft_uitoa_ll.o libft/*.o unicode.o
+	ft_uitoa_ll.o unicode.o
 LIB = libft/libft.a
 
 all: $(NAME)
@@ -28,7 +28,7 @@ all: $(NAME)
 $(NAME):
 	make -C libft
 	gcc $(FLAG) $(OPTION) $(addprefix $(SRCDIR)/,$(SRC))
-	ar rc $(NAME) $(OBJ)
+	ar rc $(NAME) $(OBJ) libft/*.o
 
 clean:
 	make clean -C libft
