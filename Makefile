@@ -27,6 +27,7 @@ $(NAME):
 	make -C libft
 	gcc $(FLAG) $(OPTION) $(SRC)
 	ar rc $(NAME) $(OBJ)
+	ranlib $(NAME)
 
 clean:
 	make clean -C libft
