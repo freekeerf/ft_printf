@@ -26,7 +26,7 @@ LIB = libft/libft.a
 all: $(NAME)
 
 $(NAME): 
-	make -C ./libft/
+	make -C libft
 	gcc $(FLAG) $(OPTION) $(addprefix $(SRCDIR)/,$(SRC))
 	ar rc $(NAME) $(OBJ)
 
