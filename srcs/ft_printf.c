@@ -45,7 +45,7 @@ int		ft_printf(char *format, ...)
 		va_end(args);
 	}
 	i = flags->rez + flags->k;
-	free(flags->result);
+	ft_strdel(&flags->result);
 	free(flags);
 	return (i);
 }

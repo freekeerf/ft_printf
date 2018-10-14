@@ -76,7 +76,7 @@ char	*ft_hex(unsigned long long p, t_flags *flags)
 	}
 	while (i >= 0)
 		buf[k++] = tmp[i--];
-	free(tmp);
+	ft_strdel(&tmp);
 	return (buf);
 }
 
@@ -121,6 +121,6 @@ int		apply_p(va_list args, t_flags *flags)
 	else
 		tmp = ft_hex(p, flags);
 	flags->tmp = tmp;
-	free(tmp);
+	ft_strdel(&tmp);
 	return (0);
 }

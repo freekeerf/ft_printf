@@ -85,6 +85,6 @@ int		apply_c(va_list args, t_flags *flags)
 	tmp = ft_memalloc(2);
 	tmp[0] = (char)(unsigned char)va_arg(args, void*);
 	flags->tmp = tmp;
-	free(tmp);
+	ft_strdel(&tmp);
 	return (0);
 }

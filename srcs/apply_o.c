@@ -89,6 +89,6 @@ int		apply_o(va_list args, t_flags *flags)
 		flags->hash = 0;
 	ft_uitoa_cc(i, &buf, 8, 0);
 	flags->tmp = buf;
-	free(buf);
+	ft_strdel(&buf);
 	return (0);
 }

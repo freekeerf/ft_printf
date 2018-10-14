@@ -78,6 +78,6 @@ int		apply_u(va_list args, t_flags *flags)
 	else
 		tmp = ft_uitoa_ll(va_arg(args, unsigned int));
 	flags->tmp = tmp;
-	free(tmp);
+	ft_strdel(&tmp);
 	return (0);
 }
