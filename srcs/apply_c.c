@@ -65,12 +65,27 @@ void	print_c(t_flags *flags)
 int		apply_cl(va_list args, t_flags *flags)
 {
 	wchar_t		test;
+	int			i;
+	char		*tmp;
 
+	i = 0;
 	test = va_arg(args, wchar_t);
-	ft_putstr(flags->result);
-	flags->rez += flags->k + unicode(test);;
-	ft_bzero(flags->result, flags->k);
-	flags->k = 0;
+//	ft_putstr(flags->result);
+//	flags->rez += flags->k + unicode(test, flags, 0);
+//	ft_bzero(flags->result, flags->k);
+//	flags->k = 0;
+	tmp = ft_memalloc(10);
+	if (test != 0)
+		unicode(test, tmp, 0);
+	else
+	{
+		force_print_c(flags);
+		return (0);
+	}
+	flags->tmp = tmp;
+	ft_strdel(&tmp);
+	while (flags->tmp[i])
+		flags->result[flags->k++] = flags->tmp[i++];
 	return (0);
 }
 

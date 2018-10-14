@@ -63,23 +63,32 @@ void	print_s(t_flags *flags)
 	to_rez_s(flags, space, zero, 0);
 }
 
-int		apply_sl(va_list args)
+int		apply_sl(va_list args, t_flags *flags)
 {
 	wchar_t		*test;
 	int			i;
 	int			k;
+	char		*tmp;
+	int			a;
 
 	i = 0;
 	k = 0;
+	tmp = ft_memalloc(100);
 	test = va_arg(args, wchar_t*);
 	if (!test)
 		test = L"(null)";
+		k = unicode(test[i++], tmp, k);
+		a = k;
 	while (test[i])
+		k = unicode(test[i++], tmp, k);
+	flags->tmp = tmp;
+	ft_strdel(&tmp);
+	if (flags->precision < (int)ft_strlen(flags->tmp))
 	{
-		k += unicode(test[i]);
-		i++;
+		i = flags->precision / a;
+		flags->precision = i * a;
 	}
-	return (k);
+	return (0);
 }
 
 int		apply_s(va_list args, t_flags *flags)
@@ -89,18 +98,13 @@ int		apply_s(va_list args, t_flags *flags)
 	flags->plus = 0;
 	flags->space = 0;
 	if (flags->size == 'l' || flags->conversion == 'S')
-	{
-		ft_putstr(flags->result);
-		flags->rez += flags->k + apply_sl(args);
-		ft_bzero(flags->result, flags->k);
-		flags->k = 0;
-		return (0);
-	}
-	flags->tmp = va_arg(args, char*);
+		apply_sl(args, flags);
+	else
+		flags->tmp = va_arg(args, char*);
 	if (flags->tmp && flags->precision != 0
 		&& flags->precision < (int)ft_strlen(flags->tmp))
 	{
-		tmp = ft_memalloc(flags->precision + 1);
+		tmp = ft_memalloc(flags->precision + 4);
 		ft_strncpy(tmp, flags->tmp, flags->precision);
 		flags->tmp = tmp;
 		ft_strdel(&tmp);

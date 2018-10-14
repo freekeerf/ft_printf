@@ -44,7 +44,7 @@ int		apply_sign(t_flags *flags)
 		print_u(flags, ft_strlen(flags->tmp));
 	else if (flags->conversion == 's' || flags->conversion == 'S')
 	{
-		if (flags->size != 'l' && flags->conversion != 'S')
+	//	if (flags->size != 'l' && flags->conversion != 'S')
 			print_s(flags);
 	}
 	else if (flags->conversion == 'c' || flags->conversion == 'C')

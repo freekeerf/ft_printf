@@ -44,7 +44,7 @@ int				apply_flags(char c, va_list args, t_flags *flags);
 int				apply_id(va_list args, t_flags *flags);
 int				apply_s(va_list args, t_flags *flags);
 char			*ft_itoa_ll(intmax_t n);
-int				apply_sl(va_list args);
+int				apply_sl(va_list args, t_flags *flags);
 int				apply_c(va_list args, t_flags *flags);
 int				apply_cl(va_list args, t_flags *flags);
 int				apply_o(va_list args, t_flags *flags);
@@ -68,6 +68,7 @@ void			print_per(t_flags *flags);
 int				flags_handling(const char *format, int i, t_flags *flags);
 int				size_mod(const char *format, int i, t_flags *flags);
 int				conversion_handling(const char *format, int i, t_flags *flags);
-int				unicode(unsigned int i);
+int				unicode(unsigned int i, char *tmp, int k);
+int				uni_len(unsigned int i);
 
 #endif
