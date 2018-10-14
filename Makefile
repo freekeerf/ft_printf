@@ -28,7 +28,6 @@ all: $(NAME)
 $(NAME): $(SRC)
 	make -C ./libft/
 	gcc $(FLAG) $(OPTION) $(addprefix $(SRCDIR)/,$(SRC))
-	@cp libft/libft.a ./$(NAME)
 	ar rc $(NAME) $(OBJ)
 
 clean:
