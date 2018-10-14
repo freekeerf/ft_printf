@@ -68,5 +68,6 @@ void			print_per(t_flags *flags);
 int				flags_handling(const char *format, int i, t_flags *flags);
 int				size_mod(const char *format, int i, t_flags *flags);
 int				conversion_handling(const char *format, int i, t_flags *flags);
+int				unicode(unsigned int i);
 
 #endif

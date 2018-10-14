@@ -46,6 +46,6 @@ int		ft_printf(char *format, ...)
 	}
 	i = flags->rez + flags->k;
 	ft_strdel(&flags->result);
-//	free(flags);
+	free(flags);
 	return (i);
 }

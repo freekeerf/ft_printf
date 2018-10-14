@@ -68,10 +68,9 @@ int		apply_cl(va_list args, t_flags *flags)
 
 	test = va_arg(args, wchar_t);
 	ft_putstr(flags->result);
-	flags->rez += flags->k + 1;
+	flags->rez += flags->k + unicode(test);;
 	ft_bzero(flags->result, flags->k);
 	flags->k = 0;
-	ft_putchar(test);
 	return (0);
 }
 

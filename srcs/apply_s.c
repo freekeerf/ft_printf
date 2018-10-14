@@ -67,18 +67,19 @@ int		apply_sl(va_list args)
 {
 	wchar_t		*test;
 	int			i;
+	int			k;
 
 	i = 0;
+	k = 0;
 	test = va_arg(args, wchar_t*);
 	if (!test)
 		test = L"(null)";
-	while (*test)
+	while (test[i])
 	{
-		write(1, test, 3);
-		test++;
+		k += unicode(test[i]);
 		i++;
 	}
-	return (i);
+	return (k);
 }
 
 int		apply_s(va_list args, t_flags *flags)
