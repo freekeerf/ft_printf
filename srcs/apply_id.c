@@ -74,8 +74,6 @@ void	print_id(t_flags *flags, int len)
 	space = 0;
 	zero = 0;
 	chech_id(flags, len);
-	if (flags->precision != 0 && flags->precision < len)
-		flags->zero = 0;
 	if (flags->tmp[0] == '-' || (flags->point == 1 && flags->tmp[0] == '0'))
 		len--;
 	if (flags->plus == 1 || flags->space == 1 || flags->tmp[0] == '-')
@@ -83,11 +81,18 @@ void	print_id(t_flags *flags, int len)
 	if (flags->width != 0)
 		space = flags->width - len - sp;
 	if (flags->precision != 0)
+	{
+//		printf("%s\n", "if");
 		zero = flags->precision - len;
-	else if (flags->zero == 1 && flags->width != 0)
+	}
+	else if (flags->zero == 1 && flags->width != 0 && (flags->precision > len || flags->precision == 0))
+	{
+//		printf("%s\n", "else");
 		zero = flags->width - len - sp;
+	}
 	if (space != 0)
 		space = space - zero;
+//	printf("zero = %i\n", zero);
 	to_rez_id(flags, space, zero, 0);
 }
 

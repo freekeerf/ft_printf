@@ -57,9 +57,10 @@ i = 0;
 	// i = printf("{%05.S}\n", L"42 c est cool");
 	// printf("i = %i\n", i);
 
-	ft_printf("printf ret = %d\n", ft_printf("%d Kashim a %d histoires à raconter Il fait au moins %d %d %d %d", 0000042, 35, 35));
-	printf("printf ret = %d\n", printf("%d Kashim a %d histoires à raconter Il fait au moins %d %d %d %d", 0000042, 35, 35));
-
+//	ft_printf("printf ret = %d\n", ft_printf("%d Kashim a %d histoires à raconter Il fait au moins %d %d %d %d", 0000042, 35, 35));
+//	printf("printf ret = %d\n", printf("%d Kashim a %d histoires à raconter Il fait au moins %d %d %d %d", 0000042, 35, 35));
+	ft_printf("%%04.2i 42 == |%04.2i|\n", 42);
+	printf("%%04.2i 42 == |%04.2i|\n", 42);
 
 
 	//system("leaks -quiet a.out");
