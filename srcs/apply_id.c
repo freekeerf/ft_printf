@@ -39,7 +39,6 @@ void	to_rez_id(t_flags *flags, int space, int zero, int i)
 			flags->result[flags->k++] = ' ';
 			space--;
 		}
-	ft_strdel(&flags->tmp);
 }
 
 void	chech_id(t_flags *flags, int len)

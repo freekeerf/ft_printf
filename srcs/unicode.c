@@ -31,47 +31,28 @@ int		uni_len(unsigned int i)
 
 int		unicode(unsigned int i, char *tmp, int k)
 {
-	char	*size;
 	int		len;
-	int		c;
 
-	ft_uitoa_cc(i, &size, 2, 0);
-	len = ft_strlen(size);
-	ft_strdel(&size);
-	if (len <= 7)
-	{	
+	len = uni_len(i);
+	if (len == 1)
 		tmp[k++] = i;
-		return (k);
-	}
-	else if (len <= 11)
+	else if (len == 2)
 	{
-		c = (i >> 6) | 192;
-		tmp[k++] = c;
-		c = ((i << 26) >> 26) | 128;
-		tmp[k++] = c;
-		return (k);
+		tmp[k++] = ((i >> 6) | 192);
+		tmp[k++] = (((i << 26) >> 26) | 128);
 	}
-	else if (len <= 16)
+	else if (len == 3)
 	{
-		c = (i >> 12) | 224;
-		tmp[k++] = c;
-		c = (i << 20) >> 26 | 128;
-		tmp[k++] = c;
-		c = (i << 26) >> 26 | 128;
-		tmp[k++] = c;
-		return (k);
+		tmp[k++] = ((i >> 12) | 224);
+		tmp[k++] = ((i << 20) >> 26 | 128);
+		tmp[k++] = ((i << 26) >> 26 | 128);
 	}
 	else
 	{
-		c = (i >> 18) | 240;
-		tmp[k++] = c;
-		c = (i << 14) >> 26 | 128;
-		tmp[k++] = c;
-		c = (i << 20) >> 26 | 128;
-		tmp[k++] = c;
-		c = (i << 26) >> 26 | 128;
-		tmp[k++] = c;
-		return (k);
+		tmp[k++] = ((i >> 4) | 240);
+		tmp[k++] = ((i << 14) >> 26 | 128);
+		tmp[k++] = ((i << 20) >> 26 | 128);
+		tmp[k++] = ((i << 26) >> 26 | 128);
 	}
-	return (0);
+	return (k);
 }

@@ -81,7 +81,7 @@ char	*ft_hex(unsigned long long p, t_flags *flags)
 	return (buf);
 }
 
-char	*kostil_p(int width, t_flags *flags, int point, int	precision)
+char	*kostil_p(int width, t_flags *flags, int point, int precision)
 {
 	int		i;
 	char	*tmp;
@@ -99,11 +99,8 @@ char	*kostil_p(int width, t_flags *flags, int point, int	precision)
 	if (point == 0)
 	{
 		tmp[i++] = '0';
-		while (precision > 0)
-		{
+		while (precision-- > 0)
 			tmp[i++] = '0';
-			precision--;
-		}
 	}
 	if (flags->minus == 1)
 		while (width-- > 3)
@@ -117,7 +114,6 @@ int		apply_p(va_list args, t_flags *flags)
 	char				*tmp;
 
 	flags->hash = 0;
-//	flags->zero = 0;
 	p = va_arg(args, unsigned long long);
 	if (p == 0)
 		tmp = kostil_p(flags->width, flags,

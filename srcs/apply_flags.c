@@ -35,7 +35,10 @@ void	print_per(t_flags *flags)
 int		apply_sign(t_flags *flags)
 {
 	if (ft_strchr("dDi", flags->conversion) != 0)
+	{
 		print_id(flags, ft_strlen(flags->tmp));
+		ft_strdel(&flags->tmp);
+	}
 	else if (flags->conversion == 'x' || flags->conversion == 'X')
 		print_x(flags, ft_strlen(flags->tmp));
 	else if (flags->conversion == 'o' || flags->conversion == 'O')
@@ -43,11 +46,7 @@ int		apply_sign(t_flags *flags)
 	else if (flags->conversion == 'u' || flags->conversion == 'U')
 		print_u(flags, ft_strlen(flags->tmp));
 	else if (flags->conversion == 's' || flags->conversion == 'S')
-	{
-	//	if (flags->size != 'l' && flags->conversion != 'S')
-			print_s(flags);
-	//		ft_strdel(flags->tmp);
-	}
+		print_s(flags);
 	else if (flags->conversion == 'c' || flags->conversion == 'C')
 	{
 		if (flags->size != 'l' && flags->conversion != 'C')

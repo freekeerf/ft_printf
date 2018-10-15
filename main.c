@@ -71,16 +71,16 @@ i = 0;
 	printf("@moulitest: %s\n", NULL);
 	ft_printf("%s %s\n", NULL, "string");
 	printf("%s %s\n", NULL, "string");
-	// printf("%s\n", "test_C");
-	// ft_printf("f%C", L'a');
-	// ft_printf("f%C", L'b');
-//	printf("p%C", L'a');
-//	printf("p%C\n", L'b');
-	// printf("%s\n", "test_S");
-	// ft_printf("%ls\n", L"abc");
-	// printf("%ls\n", L"abc");
-	// printf("%s\n", "test_mix2");
-//	ft_printf("Lalalala, %d%% des gens qui parlent %C Ly adorent %s. Ou Presque. %d, %u, %X, %c\n", );
+	printf("%s\n", "test_C");
+	ft_printf("f%C", L'a');
+	ft_printf("f%C\n", L'b');
+	printf("p%C", L'a');
+	printf("p%C\n", L'b');
+	printf("%s\n", "test_S");
+	ft_printf("%ls\n", L"abc");
+	printf("%ls\n", L"abc");
+//	printf("%s\n", "test_mix2");
+//		ft_printf("Lalalala, %d%% des gens qui parlent %C Ly adorent %s. Ou Presque. %d, %u, %X, %c\n", );
 
 
 	system("leaks -quiet a.out");

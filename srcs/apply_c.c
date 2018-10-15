@@ -45,7 +45,7 @@ void	to_rez_c(t_flags *flags, int space, int zero, int i)
 			flags->result[flags->k++] = ' ';
 			space--;
 		}
-		ft_strdel(&flags->tmp);
+	ft_strdel(&flags->tmp);
 }
 
 void	print_c(t_flags *flags)
@@ -72,7 +72,6 @@ int		apply_cl(va_list args, t_flags *flags)
 
 	i = 0;
 	test = va_arg(args, wchar_t);
-//	printf("%C\n", test);
 	tmp = ft_memalloc(20);
 	if (test != 0)
 		unicode(test, tmp, 0);
@@ -81,11 +80,10 @@ int		apply_cl(va_list args, t_flags *flags)
 		force_print_c(flags);
 		return (0);
 	}
-	flags->tmp = ft_strdup(tmp);
+	flags->tmp = tmp;
 	ft_strdel(&tmp);
 	while (flags->tmp[i])
 		flags->result[flags->k++] = flags->tmp[i++];
-	ft_strdel(&flags->tmp);
 	return (0);
 }
 

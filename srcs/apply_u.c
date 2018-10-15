@@ -33,7 +33,7 @@ void	to_rez_u(t_flags *flags, int space, int zero, int i)
 			flags->result[flags->k++] = ' ';
 			space--;
 		}
-		ft_strdel(&flags->tmp);
+	ft_strdel(&flags->tmp);
 }
 
 void	print_u(t_flags *flags, int len)
