@@ -76,7 +76,7 @@ char	*ft_hex(unsigned long long p, t_flags *flags)
 	}
 	while (i >= 0)
 		buf[k++] = tmp[i--];
-//	ft_strdel(&tmp);
+	ft_strdel(&tmp);
 	return (buf);
 }
 
