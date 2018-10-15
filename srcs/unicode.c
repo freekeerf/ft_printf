@@ -19,7 +19,7 @@ int		uni_len(unsigned int i)
 
 	ft_uitoa_cc(i, &size, 2, 0);
 	len = ft_strlen(size);
-	ft_strdel(&size);
+//	ft_strdel(&size);
 	if (len <= 7)
 		return (1);
 	else if (len <= 11)
@@ -37,7 +37,7 @@ int		unicode(unsigned int i, char *tmp, int k)
 
 	ft_uitoa_cc(i, &size, 2, 0);
 	len = ft_strlen(size);
-	ft_strdel(&size);
+//	ft_strdel(&size);
 	if (len <= 7)
 	{	
 		tmp[k++] = i;

@@ -33,7 +33,7 @@ int		ft_printf(char *format, ...)
 	va_list			args;
 	int				i;
 
-	printf("format = %s\n!", format);
+//ß	printf("format = %s\n!", format);
 //	while ()
 //	printf("arg = %d\n!", va_arg(args, int));
 	flags = ft_memalloc(sizeof(t_flags));

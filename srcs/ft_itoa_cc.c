@@ -62,6 +62,6 @@ int		ft_itoa_cc(intmax_t n, char **buf, int cc)
 	{
 		buf[0][k++] = tmp[i--];
 	}
-	ft_strdel(&tmp);
+//	ft_strdel(&tmp);
 	return (0);
 }

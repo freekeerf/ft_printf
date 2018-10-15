@@ -91,7 +91,7 @@ int		apply_x(va_list args, t_flags *flags)
 	if (ft_uitoa_cc(i, &buf, 16, flags->conversion - 33) == 0)
 	{
 		flags->tmp = buf;
-		ft_strdel(&buf);
+//		ft_strdel(&buf);
 		return (0);
 	}
 	return (-1);

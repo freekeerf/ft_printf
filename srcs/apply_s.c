@@ -82,7 +82,7 @@ int		apply_sl(va_list args, t_flags *flags)
 	while (test[i])
 		k = unicode(test[i++], tmp, k);
 	flags->tmp = tmp;
-	ft_strdel(&tmp);
+//	ft_strdel(&tmp);
 	if (flags->precision < (int)ft_strlen(flags->tmp))
 	{
 		i = flags->precision / a;
@@ -107,7 +107,7 @@ int		apply_s(va_list args, t_flags *flags)
 		tmp = ft_memalloc(flags->precision + 4);
 		ft_strncpy(tmp, flags->tmp, flags->precision);
 		flags->tmp = tmp;
-		ft_strdel(&tmp);
+//		ft_strdel(&tmp);
 		flags->precision = 0;
 	}
 	return (0);
