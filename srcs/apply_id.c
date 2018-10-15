@@ -80,7 +80,7 @@ void	print_id(t_flags *flags, int len)
 		sp = 1;
 	if (flags->width != 0)
 		space = flags->width - len - sp;
-	if (flags->precision != 0)
+	if (flags->precision != 0 && flags->precision > len)
 		zero = flags->precision - len;
 	else if (flags->zero == 1 && flags->width != 0)
 		zero = flags->width - len - sp;

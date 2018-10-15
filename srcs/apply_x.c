@@ -38,7 +38,6 @@ void	to_rez_x(t_flags *flags, int space, int zero, int i)
 			flags->result[flags->k++] = ' ';
 			space--;
 		}
-	//ft_bzero(flags->tmp, ft_strlen(flags->tmp));
 	ft_strdel(&flags->tmp);
 }
 
