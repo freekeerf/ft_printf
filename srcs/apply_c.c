@@ -19,6 +19,7 @@ void	force_print_c(t_flags *flags)
 	ft_bzero(flags->result, flags->k);
 	flags->k = 0;
 	write(1, "\0", 1);
+	ft_strdel(&flags->tmp);
 }
 
 void	to_rez_c(t_flags *flags, int space, int zero, int i)
@@ -44,6 +45,7 @@ void	to_rez_c(t_flags *flags, int space, int zero, int i)
 			flags->result[flags->k++] = ' ';
 			space--;
 		}
+		ft_strdel(&flags->tmp);
 }
 
 void	print_c(t_flags *flags)
@@ -70,10 +72,6 @@ int		apply_cl(va_list args, t_flags *flags)
 
 	i = 0;
 	test = va_arg(args, wchar_t);
-//	ft_putstr(flags->result);
-//	flags->rez += flags->k + unicode(test, flags, 0);
-//	ft_bzero(flags->result, flags->k);
-//	flags->k = 0;
 	tmp = ft_memalloc(10);
 	if (test != 0)
 		unicode(test, tmp, 0);
@@ -83,7 +81,7 @@ int		apply_cl(va_list args, t_flags *flags)
 		return (0);
 	}
 	flags->tmp = tmp;
-//	ft_strdel(&tmp);
+	ft_strdel(&tmp);
 	while (flags->tmp[i])
 		flags->result[flags->k++] = flags->tmp[i++];
 	return (0);
@@ -98,7 +96,7 @@ int		apply_c(va_list args, t_flags *flags)
 	flags->precision = 0;
 	tmp = ft_memalloc(2);
 	tmp[0] = (char)(unsigned char)va_arg(args, void*);
-	flags->tmp = tmp;
-//	ft_strdel(&tmp);
+	flags->tmp = ft_strdup(tmp);
+	ft_strdel(&tmp);
 	return (0);
 }

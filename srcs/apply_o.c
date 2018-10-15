@@ -35,7 +35,7 @@ void	to_rez_o(t_flags *flags, int space, int zero, int i)
 			flags->result[flags->k++] = ' ';
 			space--;
 		}
-	ft_bzero(flags->tmp, ft_strlen(flags->tmp));
+	ft_strdel(&flags->tmp);
 }
 
 void	print_o(t_flags *flags, int len)
@@ -88,7 +88,7 @@ int		apply_o(va_list args, t_flags *flags)
 	if (i == 0 && flags->point == 0)
 		flags->hash = 0;
 	ft_uitoa_cc(i, &buf, 8, 0);
-	flags->tmp = buf;
-//	ft_strdel(&buf);
+	flags->tmp = ft_strdup(buf);
+	ft_strdel(&buf);
 	return (0);
 }

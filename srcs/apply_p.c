@@ -22,6 +22,7 @@ void	print_p(t_flags *flags)
 		while (flags->tmp[i])
 			flags->result[flags->k++] = flags->tmp[i++];
 	}
+	ft_strdel(&flags->tmp);
 }
 
 int		kostil_p2(t_flags *flags, int i)
@@ -123,7 +124,7 @@ int		apply_p(va_list args, t_flags *flags)
 			flags->point, flags->precision - 1);
 	else
 		tmp = ft_hex(p, flags);
-	flags->tmp = tmp;
-//	ft_strdel(&tmp);
+	flags->tmp = ft_strdup(tmp);
+	ft_strdel(&tmp);
 	return (0);
 }

@@ -39,6 +39,7 @@ void	to_rez_id(t_flags *flags, int space, int zero, int i)
 			flags->result[flags->k++] = ' ';
 			space--;
 		}
+	ft_strdel(&flags->tmp);
 }
 
 void	chech_id(t_flags *flags, int len)
@@ -108,7 +109,7 @@ int		apply_id(va_list args, t_flags *flags)
 		tmp = ft_itoa_ll((signed char)va_arg(args, void*));
 	else
 		tmp = ft_itoa_ll(va_arg(args, int));
-	flags->tmp = tmp;
-//	free(tmp);
+	flags->tmp = ft_strdup(tmp);
+	ft_strdel(&tmp);
 	return (0);
 }

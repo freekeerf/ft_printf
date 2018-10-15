@@ -38,7 +38,8 @@ void	to_rez_x(t_flags *flags, int space, int zero, int i)
 			flags->result[flags->k++] = ' ';
 			space--;
 		}
-	ft_bzero(flags->tmp, ft_strlen(flags->tmp));
+	//ft_bzero(flags->tmp, ft_strlen(flags->tmp));
+	ft_strdel(&flags->tmp);
 }
 
 void	print_x(t_flags *flags, int len)
@@ -90,8 +91,8 @@ int		apply_x(va_list args, t_flags *flags)
 		i = (va_arg(args, unsigned int));
 	if (ft_uitoa_cc(i, &buf, 16, flags->conversion - 33) == 0)
 	{
-		flags->tmp = buf;
-//		ft_strdel(&buf);
+		flags->tmp = ft_strdup(buf);
+		ft_strdel(&buf);
 		return (0);
 	}
 	return (-1);

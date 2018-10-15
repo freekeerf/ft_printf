@@ -33,6 +33,7 @@ void	to_rez_u(t_flags *flags, int space, int zero, int i)
 			flags->result[flags->k++] = ' ';
 			space--;
 		}
+		ft_strdel(&flags->tmp);
 }
 
 void	print_u(t_flags *flags, int len)
@@ -77,7 +78,7 @@ int		apply_u(va_list args, t_flags *flags)
 		tmp = ft_uitoa_ll((unsigned char)va_arg(args, void*));
 	else
 		tmp = ft_uitoa_ll(va_arg(args, unsigned int));
-	flags->tmp = tmp;
-//	ft_strdel(&tmp);
+	flags->tmp = ft_strdup(tmp);
+	ft_strdel(&tmp);
 	return (0);
 }
