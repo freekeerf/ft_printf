@@ -77,8 +77,8 @@ int		apply_sl(va_list args, t_flags *flags)
 	test = va_arg(args, wchar_t*);
 	if (!test)
 		test = L"(null)";
-		k = unicode(test[i++], tmp, k);
-		a = k;
+	k = unicode(test[i++], tmp, k);
+	a = k;
 	while (test[i])
 		k = unicode(test[i++], tmp, k);
 	flags->tmp = tmp;

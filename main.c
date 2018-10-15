@@ -67,8 +67,10 @@ i = 0;
 
 
 	ft_printf("%s\n", "abc");
-	ft_printf("@moulitest: %s", NULL);
-	ft_printf("%s %s", NULL, "string");
+	ft_printf("@moulitest: %s\n", NULL);
+	printf("@moulitest: %s\n", NULL);
+	ft_printf("%s %s\n", NULL, "string");
+	printf("%s %s\n", NULL, "string");
 	// printf("%s\n", "test_C");
 	// ft_printf("f%C", L'a');
 	// ft_printf("f%C", L'b');
@@ -81,6 +83,6 @@ i = 0;
 //	ft_printf("Lalalala, %d%% des gens qui parlent %C Ly adorent %s. Ou Presque. %d, %u, %X, %c\n", );
 
 
-	//system("leaks -quiet a.out");
+	system("leaks -quiet a.out");
 	return (0);
 }
