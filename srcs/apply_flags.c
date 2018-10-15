@@ -61,7 +61,6 @@ int		apply_sign(t_flags *flags)
 
 int		apply_flags(char c, va_list args, t_flags *flags)
 {
-	ft_printf("%s\n", flags->result);
 	if (c == 'i' || c == 'd' || c == 'D')
 		apply_id(args, flags);
 	if (c == 's' || c == 'S')

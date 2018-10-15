@@ -33,6 +33,7 @@ int		ft_printf(char *format, ...)
 	va_list			args;
 	int				i;
 
+	printf("%s\n", format);
 	flags = ft_memalloc(sizeof(t_flags));
 	ft_init(flags);
 	flags->k = 0;
