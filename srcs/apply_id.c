@@ -74,13 +74,15 @@ void	print_id(t_flags *flags, int len)
 	space = 0;
 	zero = 0;
 	chech_id(flags, len);
+	if (flags->precision != 0 && flags->precision < len)
+		flags->zero = 0;
 	if (flags->tmp[0] == '-' || (flags->point == 1 && flags->tmp[0] == '0'))
 		len--;
 	if (flags->plus == 1 || flags->space == 1 || flags->tmp[0] == '-')
 		sp = 1;
 	if (flags->width != 0)
 		space = flags->width - len - sp;
-	if (flags->precision != 0 && flags->precision > len)
+	if (flags->precision != 0)
 		zero = flags->precision - len;
 	else if (flags->zero == 1 && flags->width != 0)
 		zero = flags->width - len - sp;
