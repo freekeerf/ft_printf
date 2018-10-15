@@ -66,19 +66,23 @@ i = 0;
 	// printf("%15.4d\n", 424242);
 
 
-	ft_printf("%s\n", "abc");
-	ft_printf("@moulitest: %s\n", NULL);
-	printf("@moulitest: %s\n", NULL);
-	ft_printf("%s %s\n", NULL, "string");
-	printf("%s %s\n", NULL, "string");
-	printf("%s\n", "test_C");
-	ft_printf("f%C", L'a');
-	ft_printf("f%C\n", L'b');
-	printf("p%C", L'a');
-	printf("p%C\n", L'b');
-	printf("%s\n", "test_S");
-	ft_printf("%ls\n", L"abc");
-	printf("%ls\n", L"abc");
+	// ft_printf("%s\n", "abc");
+	// ft_printf("@moulitest: %s\n", NULL);
+	// printf("@moulitest: %s\n", NULL);
+	// ft_printf("%s %s\n", NULL, "string");
+	// printf("%s %s\n", NULL, "string");
+	// printf("%s\n", "test_C");
+	// ft_printf("f%C", L'a');
+	// ft_printf("f%C\n", L'b');
+	// printf("p%C", L'a');
+	// printf("p%C\n", L'b');
+	// printf("%s\n", "test_S");
+	// ft_printf("%ls\n", L"abc");
+	// printf("%ls\n", L"abc");
+
+	ft_printf("%-5.3s LYDI == |%-5.3s|\n", "LYDI");
+	printf("%-5.3s LYDI == |%-5.3s|\n", "LYDI");
+
 //	printf("%s\n", "test_mix2");
 //		ft_printf("Lalalala, %d%% des gens qui parlent %C Ly adorent %s. Ou Presque. %d, %u, %X, %c\n", );
 
