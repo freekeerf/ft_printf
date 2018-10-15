@@ -41,6 +41,15 @@ void	to_rez_x(t_flags *flags, int space, int zero, int i)
 	ft_strdel(&flags->tmp);
 }
 
+void	print_x_h(t_flags *flags, int space, int zero)
+{
+	if (space != 0)
+		space = space - zero;
+	if (flags->width == 0 && flags->precision != 0 && flags->hash == 1)
+		zero += 2;
+	to_rez_x(flags, space, zero, 0);
+}
+
 void	print_x(t_flags *flags, int len)
 {
 	int		zero;
@@ -60,13 +69,13 @@ void	print_x(t_flags *flags, int len)
 		space = flags->width - len;
 	if (flags->precision != 0)
 		zero = flags->precision - len;
+	if (flags->precision > len && flags->width != 0 && flags->tmp[0] == '0')
+		zero += 2;
+	if (flags->tmp[0] == '0' && flags->hash == 1 && flags->precision > len)
+		zero -= 2;
 	else if (flags->zero == 1 && flags->width != 0)
 		zero = flags->width - len;
-	if (space != 0)
-		space = space - zero;
-	if (flags->width == 0 && flags->precision != 0 && flags->hash == 1)
-		zero += 2;
-	to_rez_x(flags, space, zero, 0);
+	print_x_h(flags, space, zero);
 }
 
 int		apply_x(va_list args, t_flags *flags)
