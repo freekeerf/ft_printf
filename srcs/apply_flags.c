@@ -46,6 +46,7 @@ int		apply_sign(t_flags *flags)
 	{
 	//	if (flags->size != 'l' && flags->conversion != 'S')
 			print_s(flags);
+	//		ft_strdel(flags->tmp);
 	}
 	else if (flags->conversion == 'c' || flags->conversion == 'C')
 	{

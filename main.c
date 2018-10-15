@@ -65,15 +65,19 @@ i = 0;
 	// ft_printf("%15.4d\n", 424242);
 	// printf("%15.4d\n", 424242);
 
-	printf("%s\n", "test_C");
-	ft_printf("f%C", L'a');
-	ft_printf("f%C", L'b');
+
+	ft_printf("%s\n", "abc");
+	ft_printf("@moulitest: %s", NULL);
+	ft_printf("%s %s", NULL, "string");
+	// printf("%s\n", "test_C");
+	// ft_printf("f%C", L'a');
+	// ft_printf("f%C", L'b');
 //	printf("p%C", L'a');
 //	printf("p%C\n", L'b');
-	printf("%s\n", "test_S");
-	ft_printf("%ls\n", L"abc");
-	printf("%ls\n", L"abc");
-	printf("%s\n", "test_mix2");
+	// printf("%s\n", "test_S");
+	// ft_printf("%ls\n", L"abc");
+	// printf("%ls\n", L"abc");
+	// printf("%s\n", "test_mix2");
 //	ft_printf("Lalalala, %d%% des gens qui parlent %C Ly adorent %s. Ou Presque. %d, %u, %X, %c\n", );
 
 
