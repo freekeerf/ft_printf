@@ -33,6 +33,8 @@ void	to_rez_s(t_flags *flags, int space, int zero, int i)
 			flags->result[flags->k++] = ' ';
 			space--;
 		}
+	if (flags->count == -1)
+		ft_strdel(&flags->tmp);
 }
 
 void	print_s(t_flags *flags)
@@ -107,7 +109,8 @@ int		apply_s(va_list args, t_flags *flags)
 		tmp = ft_memalloc(flags->precision + 4);
 		ft_strncpy(tmp, flags->tmp, flags->precision);
 		flags->tmp = tmp;
-		free(tmp);
+		flags->count = -1;
+//		ft_strdel(&tmp);
 		flags->precision = 0;
 	}
 	return (0);
