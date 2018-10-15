@@ -72,7 +72,7 @@ int		apply_cl(va_list args, t_flags *flags)
 
 	i = 0;
 	test = va_arg(args, wchar_t);
-	tmp = ft_memalloc(10);
+	tmp = ft_memalloc(20);
 	if (test != 0)
 		unicode(test, tmp, 0);
 	else
