@@ -42,20 +42,22 @@ i = 0;
 	// printf("U#43\n");
 	// ft_printf("%hhC, %hhC\n", 0, L'Á±≥');
 	// printf("%hhC, %hhC\n", 0, L'Á±≥');
-	printf("#50\n");
-	ft_printf("{%5p}\n", 0);
-	printf("{%5p}\n", 0);
-	printf("U#52\n");
-	ft_printf("{%030S}\n", L"我是一只猫。");
-	printf("{%030S}\n", L"我是一只猫。");
-	printf("#72\n");
-	ft_printf("%.4S\n", L"我是一只猫。");
-	printf("%.4S\n", L"我是一只猫。");
-	printf("#79\n");
-	i = ft_printf("{%05.S}\n", L"42 c est cool");
-	printf("i = %i\n", i);
-	i = printf("{%05.S}\n", L"42 c est cool");
-	printf("i = %i\n", i);
+	// printf("#50\n");
+	// ft_printf("{%5p}\n", 0);
+	// printf("{%5p}\n", 0);
+	// printf("U#52\n");
+	// ft_printf("{%030S}\n", L"我是一只猫。");
+	// printf("{%030S}\n", L"我是一只猫。");
+	// printf("#72\n");
+	// ft_printf("%.4S\n", L"我是一只猫。");
+	// printf("%.4S\n", L"我是一只猫。");
+	// printf("#79\n");
+	// i = ft_printf("{%05.S}\n", L"42 c est cool");
+	// printf("i = %i\n", i);
+	// i = printf("{%05.S}\n", L"42 c est cool");
+	// printf("i = %i\n", i);
+
+	ft_printf("%%d 0000042 == |%d|\n", 0000042);
 
 
 
