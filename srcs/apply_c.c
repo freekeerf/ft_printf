@@ -81,7 +81,7 @@ int		apply_cl(va_list args, t_flags *flags)
 		return (0);
 	}
 	flags->tmp = tmp;
-//	ft_strdel(&tmp);
+	ft_strdel(&tmp);
 	while (flags->tmp[i])
 		flags->result[flags->k++] = flags->tmp[i++];
 	return (0);

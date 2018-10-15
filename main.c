@@ -80,9 +80,9 @@ i = 0;
 	// ft_printf("%ls\n", L"abc");
 	// printf("%ls\n", L"abc");
 
-//	ft_printf("%%-5.3s LYDI == |%-5.3s|\n", "LYDI");
-//	printf("%%-5.3s LYDI == |%-5.3s|\n", "LYDI");
-	printf("%s %s %s", 1);
+	ft_printf("%%-5.3s LYDI == |%-5.3s|\n", "LYDI");
+	printf("%%-5.3s LYDI == |%-5.3s|\n", "LYDI");
+//	printf("%s %s %s", 1);
 
 //	printf("%s\n", "test_mix2");
 //		ft_printf("Lalalala, %d%% des gens qui parlent %C Ly adorent %s. Ou Presque. %d, %u, %X, %c\n", );
