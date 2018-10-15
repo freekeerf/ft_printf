@@ -55,6 +55,6 @@ int		ft_uitoa_cc(uintmax_t n, char **buf, int cc, int x)
 	{
 		buf[0][k++] = tmp[i--];
 	}
-//	ft_strdel(&tmp);
+	ft_strdel(&tmp);
 	return (0);
 }
