@@ -62,6 +62,9 @@ i = 0;
 	ft_printf("%%04.2i 42 == |%04.2i|\n", 42);
 	printf("%%04.2i 42 == |%04.2i|\n", 42);
 
+	ft_printf("%15.4d\n", 424242);
+	printf("%15.4d\n", 424242);
+
 
 	//system("leaks -quiet a.out");
 	return (0);
