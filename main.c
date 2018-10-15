@@ -81,6 +81,8 @@ i = 0;
 	// printf("%ls\n", L"abc");
 
 	ft_printf("%%-5.3s LYDI == |%-5.3s|\n", "LYDI");
+	ft_printf("%%-5.3s LYDI == |%-5s|\n", "LYDI");
+	ft_printf("%%-.3s LYDI == |%-5.3s|\n", "LYDI");
 	printf("%%-5.3s LYDI == |%-5.3s|\n", "LYDI");
 //	printf("%s %s %s", 1);
 
