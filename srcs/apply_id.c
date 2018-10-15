@@ -109,6 +109,6 @@ int		apply_id(va_list args, t_flags *flags)
 	else
 		tmp = ft_itoa_ll(va_arg(args, int));
 	flags->tmp = tmp;
-//	free(tmp);
+	free(tmp);
 	return (0);
 }
