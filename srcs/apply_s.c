@@ -79,8 +79,8 @@ int		apply_sl(va_list args, t_flags *flags)
 	test = va_arg(args, wchar_t*);
 	if (!test)
 		test = L"(null)";
-		k = unicode(test[i++], tmp, k);
-		a = k;
+	k = unicode(test[i++], tmp, k);
+	a = k;
 	while (test[i])
 		k = unicode(test[i++], tmp, k);
 	flags->tmp = tmp;
@@ -110,7 +110,6 @@ int		apply_s(va_list args, t_flags *flags)
 		ft_strncpy(tmp, flags->tmp, flags->precision);
 		flags->tmp = tmp;
 		flags->count = -1;
-//		ft_strdel(&tmp);
 		flags->precision = 0;
 	}
 	return (0);

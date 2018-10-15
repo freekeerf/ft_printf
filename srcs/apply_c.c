@@ -19,7 +19,7 @@ void	force_print_c(t_flags *flags)
 	ft_bzero(flags->result, flags->k);
 	flags->k = 0;
 	write(1, "\0", 1);
-//	ft_strdel(&flags->tmp);
+	ft_strdel(&flags->tmp);
 }
 
 void	to_rez_c(t_flags *flags, int space, int zero, int i)
