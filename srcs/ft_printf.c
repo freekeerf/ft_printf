@@ -34,7 +34,7 @@ int		ft_printf(char *format, ...)
 	int				i;
 
 //	printf("format = %s\n!", format);
-	printf("arg = %C\n!", va_arg(args, int));
+	printf("arg = %C\n!", va_arg(args, wchar_t));
 	flags = ft_memalloc(sizeof(t_flags));
 	ft_init(flags);
 	flags->k = 0;
