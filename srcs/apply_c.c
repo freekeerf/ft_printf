@@ -72,6 +72,7 @@ int		apply_cl(va_list args, t_flags *flags)
 
 	i = 0;
 	test = va_arg(args, wchar_t);
+//	printf("%C\n", test);
 	tmp = ft_memalloc(20);
 	if (test != 0)
 		unicode(test, tmp, 0);
@@ -80,10 +81,11 @@ int		apply_cl(va_list args, t_flags *flags)
 		force_print_c(flags);
 		return (0);
 	}
-	flags->tmp = tmp;
+	flags->tmp = ft_strdup(tmp);
 	ft_strdel(&tmp);
 	while (flags->tmp[i])
 		flags->result[flags->k++] = flags->tmp[i++];
+	ft_strdel(&flags->tmp);
 	return (0);
 }
 
