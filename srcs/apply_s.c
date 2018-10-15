@@ -107,7 +107,7 @@ int		apply_s(va_list args, t_flags *flags)
 		tmp = ft_memalloc(flags->precision + 4);
 		ft_strncpy(tmp, flags->tmp, flags->precision);
 		flags->tmp = tmp;
-//		ft_strdel(&tmp);
+		free(tmp);
 		flags->precision = 0;
 	}
 	return (0);
